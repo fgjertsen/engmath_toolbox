@@ -22,5 +22,5 @@ Can be used directly with `Try_Talbot_Inversion.bat`.
 * Effectiveness of pow(double, int): Replace with a special function
 
 ## Credits
-**Main inspiration**: MATLAB code by Tucker McClure
+**Main inspiration**: MATLAB code by Tucker McClure  
 **Source**: Abate and Whitt (2006)
