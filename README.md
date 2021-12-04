@@ -3,4 +3,4 @@ A selection of scripts, snippets, examples and tools from numerical/scientific t
 
 ## Contents
 * [Geometry calculations](Geometry_Calculations/)
-* [Talbot Inversion](Talbot_Inversion/) of Laplace transforms
+* [Talbot Inversion](Talbot_inversion/) of Laplace transforms

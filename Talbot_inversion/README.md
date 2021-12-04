@@ -1,4 +1,4 @@
-# Numerical invertion of Laplace transforms
+# Numerical inversion of Laplace transforms
 Functions for inverse Laplace transforms, using
 	1. Euler Inversion
 	2. Talbot Inversion
@@ -10,9 +10,9 @@ Functions for inverse Laplace transforms, using
 3. Damped sine
 
 ## Usage
-Build with `gcc talbot_inversion.c -o Talbot`.
-Run with `Talbot i` where `i` is the index of the function to test.
-`Talbot` will used `i=3` as default.
+Build with `gcc talbot_inversion.c -o Talbot`. 
+Run with `Talbot i` where `i` is the index of the function to test. 
+`Talbot` will used `i=3` as default. 
 
 Can be used directly with `Try_Talbot_Inversion.bat`.
 
