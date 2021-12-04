@@ -1,7 +1,7 @@
 # Numerical inversion of Laplace transforms
-Functions for inverse Laplace transforms, using
-	1. Euler Inversion
-	2. Talbot Inversion
+Functions for inverse Laplace transforms, using  
+	1. Euler Inversion  
+	2. Talbot Inversion  
 
 ### List of functions
 0. Ramp function, type 1
