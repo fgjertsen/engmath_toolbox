@@ -13,6 +13,7 @@
 #include <math.h>		/* Standard Library of Math				*/
 
 #define M		64
+static const int m = M/2;
 #define cot(x)	(cos(x)/sin(x))
 
 // Set what Laplace transform function to invert (see list of functions below)
@@ -50,6 +51,18 @@ int bnml(int n, int k)
         else    				ans	 = (ans*n)/j;
     }
     return ans;
+}
+
+/***************************************************************************************
+* Special power function where the exponent is an integer                              *
+***************************************************************************************/
+double powi(double dbase, int nExponent)
+{
+	double val = 1.0;
+	for (int i = 0; i < nExponent; i++){
+		val *= dbase;
+	}	
+	return val;
 }
 
 /***************************************************************************************
@@ -99,7 +112,6 @@ double Euler_inversion(						// Ret: Inverse Laplace transform of function Fs at
 	double t								// In:	Time at which to evaluate ILT
 	)
 {
-	int m = M/2;
 	double complex
 		beta[M + 1];
 	double
@@ -109,10 +121,10 @@ double Euler_inversion(						// Ret: Inverse Laplace transform of function Fs at
 	// Calculate xi
 	xi[0] = 0.5;
 	xi[m] = 1.0;
-	xi[M] = 1.0 / pow(2.0, m);
+	xi[M] = 1.0 / powi(2.0, m);
 	for (int k = 1; k < m; k++){
 		xi[k]		= 1.0;
-		xi[M - k]	= xi[M - k + 1] + bnml(m, k) / pow(2.0, m);
+		xi[M - k]	= xi[M - k + 1] + bnml(m, k) / powi(2.0, m);
 	}
 
 	// Calculate beta and eta
