@@ -1,12 +1,15 @@
 
 /***************************************************************************************
-*	Inverse Laplace transform, Eulers Inversion Method								   *
+*	Inverse Laplace transforms														   *
+*		1) Talbot's method, according to Abate and Whitt (2006)                        *
+*		2) Euler's method															   *
 *	Inspired by MATLAB code by Tucker McClure                                          *
-*                                                                                      *
+*   Method according to Abate and Whitt (2006)     									   *
+*																					   *
 *	Fredrik Gjertsen 	<fredrik.gjertsen@gmail.com>  		                           *
 ***************************************************************************************/
 
-#include "euler_inversion.h"
+#include "nilt.h"
 
 /***************************************************************************************
 * Binomial coeffient ("from n choose k")                                               *
@@ -50,6 +53,9 @@ double Euler_inversion(						// Ret: Inverse Laplace transform of function Fs at
 		xi[M + 1],
 		eta[M + 1];
 
+	// Dimension for algorithm
+	const int m = M/2;
+
 	// Calculate xi
 	xi[0] = 0.5;
 	xi[m] = 1.0;
@@ -73,3 +79,45 @@ double Euler_inversion(						// Ret: Inverse Laplace transform of function Fs at
 	// Return inverse Laplace transform
 	return ilt;
 }
+
+
+/***************************************************************************************
+* Talbot inversion formula                                                             *
+***************************************************************************************/
+double Talbot_inversion(					// Ret: Inverse Laplace transform of function Fs at t
+	double complex (*Fs)(double complex),	// In:	Pointer to Laplace transform function
+	double t								// In:	Time at which to evaluate ILT
+	)
+{
+	double complex
+		delta[M],
+		gamma[M],
+		gamma_fs[M];
+
+	// Calculate delta
+	delta[0] = 2.0*M/5.0;
+	for (int k = 1; k < M; k++)
+		delta[k]	= 2.0*M_PI/5.0 * k * ( cot(M_PI/M*k) + I );
+
+	// Calculate gamma
+	gamma[0] = 0.5;
+	for (int k = 1; k < M; k++){
+		gamma[k]	= M_PI/M*k*(1.0 + cot(M_PI/M*k)*cot(M_PI/M*k)) - cot(M_PI/M*k);
+		gamma[k]   *= I;
+		gamma[k]   += 1.0;
+	}
+	for (int k = 0; k < M; k++)
+		gamma[k]   *= cexp(delta[k]);
+	
+	// Calculate inverse Laplace Transform
+	double ilt = 0.0;
+	for (int k = 0; k < M; k++){
+		gamma_fs[k]	= gamma[k] * Fs(delta[k]/t);
+		ilt		   += 0.4 / t * creal(gamma_fs[k]);
+	}
+	
+	// Return inverse Laplace transform
+	return ilt;
+}
+
+

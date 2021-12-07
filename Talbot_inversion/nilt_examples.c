@@ -3,9 +3,7 @@
 * Examples for inverse Laplace transforms											   *
 ***************************************************************************************/
 
-#include "ilt_common.h"
-#include "euler_inversion.h"
-#include "talbot_inversion.h"
+#include "nilt.h"		// Numerical inverse Laplace transforms
 
 // Set what Laplace transform function to invert (see list of functions below)
 static int nLaplaceTransform;
