@@ -12,6 +12,10 @@
 #ifndef NILT_H
 #define NILT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdlib.h>		/* Standard Library functions			*/
 #include <stdio.h>      /* Standard Library of Input and Output */
 #include <complex.h>    /* Standard Library of Complex Numbers 	*/
@@ -33,5 +37,9 @@ double Talbot_inversion(					// Ret: Inverse Laplace transform of function Fs at
 	double complex (*Fs)(double complex),	// In:	Pointer to Laplace transform function
 	double t								// In:	Time at which to evaluate ILT
 	);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
