@@ -14,7 +14,7 @@
 /***************************************************************************************
 * Binomial coeffient ("from n choose k")                                               *
 ***************************************************************************************/
-int bnml(int n, int k)
+static int bnml(int n, int k)
 {
     int ans = 1;
     k = k > n-k ? n-k : k;
@@ -30,7 +30,7 @@ int bnml(int n, int k)
 /***************************************************************************************
 * Special power function where the exponent is an integer                              *
 ***************************************************************************************/
-double powi(double dBase, int nExponent)
+static double powi(double dBase, int nExponent)
 {
 	double val = 1.0;
 	for (int i = 0; i < nExponent; i++){
