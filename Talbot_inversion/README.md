@@ -22,8 +22,9 @@ Can be used directly with `Try_Talbot_Inversion.bat`.
 *(drawing acquired from Wikimedia Commons)*
 
 ## Credits
-**Main inspiration**: MATLAB code by Tucker McClure  
-**Source**: Abate and Whitt (2006)
+**Inspiration, implementation**: [MATLAB code by Tucker McClure](https://se.mathworks.com/matlabcentral/fileexchange/39035-numerical-inverse-laplace-transform)  
+**Theory, methods**: [Abate and Whitt (2006)](http://www.columbia.edu/~ww2040/UnifiedDraft.pdf)  
 
 ### Disclaimer
+Software "as is". No warranty.  
 I did not invent these methods. I only made my own C-implementation of the methods.
