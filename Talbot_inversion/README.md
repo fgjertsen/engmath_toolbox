@@ -18,7 +18,7 @@ Run with `NILT i` where `i` is the index of the function to test.
 
 Can be used directly with `Try_Talbot_Inversion.bat`.  
 
-![P. S. Laplace, himself (I do not own rights to this picture)](/assets/P_S_Laplace.jpg)
+![I do not own rights to this picture](/assets/P_S_Laplace.jpg?raw=true "Laplace")
 
 ## Credits
 **Main inspiration**: MATLAB code by Tucker McClure  
