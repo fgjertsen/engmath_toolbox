@@ -27,4 +27,4 @@ Can be used directly with `Try_Talbot_Inversion.bat`.
 
 ### Disclaimer
 Software "as is". No warranty.  
-I did not invent these methods. I only made my own C-implementation of the methods.
+I did not invent these methods, but the code is "made from scratch".
