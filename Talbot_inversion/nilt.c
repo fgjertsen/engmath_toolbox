@@ -3,10 +3,9 @@
 *	Inverse Laplace transforms														   *
 *		1) Talbot's method, according to Abate and Whitt (2006)                        *
 *		2) Euler's method															   *
-*	Inspired by MATLAB code by Tucker McClure                                          *
 *   Method according to Abate and Whitt (2006)     									   *
 *																					   *
-*	Fredrik Gjertsen 	<fredrik.gjertsen@gmail.com>  		                           *
+*	Fredrik Gjertsen 										                           *
 ***************************************************************************************/
 
 #include "nilt.h"

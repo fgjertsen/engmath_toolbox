@@ -1,12 +1,11 @@
 
 /***************************************************************************************
 *	Inverse Laplace transforms														   *
-*	Inspired by MATLAB code by Tucker McClure                                          *
 *	Methods: 																		   *
 *		1) Talbot's method, according to Abate and Whitt (2006)                        *
 *		2) Euler's method															   *
 *                                                                                      *
-*	Fredrik Gjertsen 	<fredrik.gjertsen@gmail.com>  		                           *
+*	Fredrik Gjertsen 							                			           *
 ***************************************************************************************/
 
 #ifndef NILT_H
